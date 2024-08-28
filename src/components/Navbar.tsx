@@ -28,17 +28,17 @@ export const Navbar = () => {
   return (
     <>
       <nav className="fixed bottom-10 mx-auto max-w-md w-full px-[16px]">
-        <div className="bg-[#4a4b5c] rounded-[20px] ">
-          <ul className="text-white font-semibold flex justify-between items-center pt-3 px-[30px]">
+        <div className="bg-white shadow-lg shadow-gray-400 border boder-slate-200 rounded-[20px] ">
+          <ul className="text-[#1B76FF] font-semibold flex justify-between items-center pt-3 px-[30px]">
             {navbarLink.map((item, index) => (
               <li
                 key={index}
                 className="relative flex flex-col items-center gap-y-1 cursor-pointer transition-all duration-300 ease-in-out  group pb-3"
               >
                 <img
-                  src={`assets/img/${item.icon}.svg`}
+                  src={`assets/img/${item.icon}.png`}
                   alt={item.title}
-                  className="filter brightness-0 invert group-hover:hidden"
+                  className=" group-hover:hidden"
                 />
                 <img
                   src={`assets/img/${item.icon}-hover.svg`}
