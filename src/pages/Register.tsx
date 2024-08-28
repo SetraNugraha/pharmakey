@@ -53,15 +53,17 @@ export default function Register() {
               />
             </div>
 
-            <button className="bg-[#FD915A] text-white font-bold text-xl text-center h-[48px] w-full rounded-3xl mt-[20px] hover:opacity-70">Create My Account</button>
+            <button className="bg-[#FD915A] text-white font-bold text-xl text-center h-[48px] w-full rounded-3xl mt-[20px] hover:bg-white hover:text-[#FD915A] transition-all duration-300 ease-in-out hover:border-[2px] hover:border-[#FD915A] shadow-xl">
+              Create My Account
+            </button>
           </div>
         </form>
       </div>
 
-      <div className="w-full text-center mt-[30px]">
+      <div className="w-full text-center mt-[30px] mb-[50px]">
         <a
           href="#"
-          className="font-bold underline"
+          className="font-bold underline hover:text-blue-500"
         >
           Sign In to My Account
         </a>

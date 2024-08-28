@@ -36,9 +36,9 @@ export const LatestProducts = () => {
         <div className="mt-[10px] flex items-center gap-x-5 overflow-x-auto whitespace-nowrap scrollbar-hide">
           {/* Card Categories */}
           {latestProducts.map((product, index) => (
-            <div
+            <button
               key={index}
-              className="flex flex-col items-center gap-y-3 px-7 py-5 bg-white rounded-[16px] shrink-0"
+              className="flex flex-col items-center gap-y-3 px-7 py-5 bg-white rounded-[16px] shrink-0 hover:bg-[#ef966a]  transition-all duration-300 ease-in-out group group"
             >
               <div className="">
                 <img
@@ -48,10 +48,10 @@ export const LatestProducts = () => {
                 />
               </div>
               <div className="flex flex-col items-start">
-                <h1 className="font-bold">{product.name}</h1>
-                <p className="text-slate-400 font-semibold">Rp. {product.price}</p>
+                <h1 className="font-bold group-hover:text-white  transition-all duration-300 ease-in-out group">{product.name}</h1>
+                <p className="text-slate-400 font-semibold group-hover:text-white  transition-all duration-300 ease-in-out group">Rp. {product.price}</p>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>
