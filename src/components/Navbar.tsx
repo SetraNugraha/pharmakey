@@ -28,8 +28,8 @@ export const Navbar = () => {
   return (
     <>
       <nav className="fixed bottom-10 mx-auto max-w-md w-full px-[16px]">
-        <div className="bg-black rounded-[50px] ">
-          <ul className="text-white font-semibold flex justify-between items-center pt-5 px-10">
+        <div className="bg-[#4a4b5c] rounded-[20px] ">
+          <ul className="text-white font-semibold flex justify-between items-center pt-3 px-[30px]">
             {navbarLink.map((item, index) => (
               <li
                 key={index}
@@ -51,7 +51,7 @@ export const Navbar = () => {
                 >
                   {item.title}
                 </a>
-                <span className="absolute bottom-0 left-0 w-full h-[5px] bg-[#FD915A] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+                <span className="absolute bottom-0 w-full h-[5px] bg-[#FD915A] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
               </li>
             ))}
           </ul>
