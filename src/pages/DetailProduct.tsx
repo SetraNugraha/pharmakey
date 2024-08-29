@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 interface Grading {
   icon: string
@@ -29,9 +29,10 @@ const gradingList: Grading[] = [
 ]
 
 export default function DetailProduct() {
+  const navigate = useNavigate()
   return (
     <>
-      <section className="h-dvhs">
+      <section className="h-dvh">
         <div className="pt-[30px] px-[16px] flex items-center justify-between">
           {/* Header */}
           <Link
@@ -138,7 +139,10 @@ export default function DetailProduct() {
               </div>
 
               <div>
-                <button className="px-6 py-3 bg-[#FD915A] text-white font-bold rounded-[50px] hover:bg-white hover:text-[#FD915A] transition-all duration-200 ease-in-out hover:border-[2px] hover:border-[#FD915A] shadow-xl">
+                <button
+                  onClick={() => navigate('/carts')}
+                  className="px-6 py-3 bg-[#FD915A] text-white font-bold rounded-[50px] hover:bg-white hover:text-[#FD915A] transition-all duration-200 ease-in-out hover:border-[2px] hover:border-[#FD915A] shadow-xl"
+                >
                   Add to Cart
                 </button>
               </div>

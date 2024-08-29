@@ -29,7 +29,6 @@ export const MostPurchased = () => {
         <h1 className="text-[22px] font-bold">Most Purchased</h1>
 
         <div className="mt-[10px] flex flex-col gap-y-5 overflow-x-auto scrollbar-hide">
-          {/* Card Categories */}
           {mostPurchased.map((item, index) => (
             <button
               key={index}

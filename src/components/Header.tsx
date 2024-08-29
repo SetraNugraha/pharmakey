@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom'
+
 export const Header = () => {
   return (
     <>
       <header className="w-full px-[16px]">
         <div className="pt-[30px] flex items-center justify-between">
-        {/* Profile */}
+          {/* Profile */}
           <a
             href=""
             className="flex gap-x-2 items-center"
@@ -37,13 +39,16 @@ export const Header = () => {
             </button>
 
             {/* Cart */}
-            <button className="p-2 rounded-full bg-white hover:bg-[#FD915A] group">
+            <Link
+              to="/carts"
+              className="p-2 rounded-full bg-white hover:bg-[#FD915A] group"
+            >
               <img
                 src="assets/img/cart.png"
                 alt="cart"
                 className="group-hover:filter group-hover:brightness-0 group-hover:invert"
               />
-            </button>
+            </Link>
           </div>
         </div>
       </header>

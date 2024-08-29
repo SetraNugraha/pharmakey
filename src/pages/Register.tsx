@@ -25,7 +25,7 @@ export default function Register() {
                   type="text"
                   name="full_name"
                   placeholder="Write your full name"
-                  icon="assets/img/profile.png"
+                  icon="assets/img/register-profile.png"
                 />
 
                 {/* Email */}

@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { Logo } from '../components/Logo'
 import { InputField } from '../components/InputField'
 
 export default function Login() {
+  const navigate = useNavigate()
   return (
     <>
       <section className="h-dvh">
@@ -38,7 +39,10 @@ export default function Login() {
                 />
               </div>
 
-              <button className="bg-[#FD915A] text-white font-bold text-xl text-center h-[48px] w-full rounded-3xl mt-[20px] hover:bg-white hover:text-[#FD915A] transition-all duration-300 ease-in-out hover:border-[2px] hover:border-[#FD915A] shadow-xl">
+              <button
+                onClick={() => navigate('/')}
+                className="bg-[#FD915A] text-white font-bold text-xl text-center h-[48px] w-full rounded-3xl mt-[20px] hover:bg-white hover:text-[#FD915A] transition-all duration-300 ease-in-out hover:border-[2px] hover:border-[#FD915A] shadow-xl"
+              >
                 Sign In
               </button>
             </div>
