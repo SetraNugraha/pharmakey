@@ -4,7 +4,7 @@ import { Navbar } from '../components/Navbar'
 export default function UserProfile() {
   return (
     <>
-      <section className="pb-[150px]">
+      <section className="h-full">
         <div className="pt-[30px] px-[16px] flex items-center">
           {/* Header */}
           <Link
@@ -34,7 +34,7 @@ export default function UserProfile() {
         </div>
 
         {/* Data User */}
-        <div className="px-[16px]">
+        <div className="px-[16px] pb-[200px]">
           <div className="bg-white mt-[20px] rounded-t-[60px] rounded-b-[60px]">
             {/* Address */}
             <div className="p-5 bg-white rounded-[24px] mt-[10px]">
