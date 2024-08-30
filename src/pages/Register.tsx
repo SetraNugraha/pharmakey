@@ -18,12 +18,13 @@ export default function Register() {
             <div className="p-[24px]">
               <h1 className="text-2xl font-bold mb-[20px]">New Account</h1>
 
+              {/* Data User */}
               <div className="flex flex-col gap-y-[20px]">
-                {/* Full Name */}
+                {/* usernaame */}
                 <InputField
-                  label="Full Name"
+                  label="Username"
                   type="text"
-                  name="full_name"
+                  name="username"
                   placeholder="Write your full name"
                   icon="assets/img/register-profile.png"
                 />

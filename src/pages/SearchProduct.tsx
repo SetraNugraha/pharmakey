@@ -47,14 +47,7 @@ export default function SearchProduct() {
               className="group-hover:filter group-hover:invert group-hover:brightness-0"
             />
           </Link>
-          <h1 className="font-semibold text-xl">Search Products</h1>
-          <button>
-            <img
-              src="assets/img/dots.png"
-              alt="setting-button"
-              className="p-2 bg-white flex justify-center items-center rounded-full"
-            />
-          </button>
+          <h1 className="font-semibold text-xl  absolute left-1/2 -translate-x-[50%]">Search Products</h1>
         </div>
 
         {/* Search Input  */}

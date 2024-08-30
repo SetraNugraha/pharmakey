@@ -6,7 +6,7 @@ export const SearchInput = () => {
     <div className="relative w-full">
       <input
         type="text"
-        placeholder="Search by product name"
+        placeholder="Search by name or category"
         className="w-full h-[52px] rounded-[50px] px-[24px] font-semibold text-slate-700 placeholder:text-[16px] border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FD915A]"
       />
       <button onClick={() => navigate('/search-product')}>

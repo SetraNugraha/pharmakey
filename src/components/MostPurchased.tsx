@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 interface MostPurchased {
   product_image: string
   name: string
@@ -30,7 +32,8 @@ export const MostPurchased = () => {
 
         <div className="mt-[10px] flex flex-col gap-y-5 overflow-x-auto scrollbar-hide">
           {mostPurchased.map((item, index) => (
-            <button
+            <Link
+              to="/detail-product"
               key={index}
               className="flex items-center justify-between gap-x-2 px-5 py-3 bg-white rounded-[16px] shrink-0 hover:bg-[#FD915A] transition-all duration-300 ease-in-out group"
             >
@@ -55,7 +58,7 @@ export const MostPurchased = () => {
                   className="group-hover:filter group-hover:brightness-0 group-hover:invert"
                 />
               </div>
-            </button>
+            </Link>
           ))}
         </div>
       </div>

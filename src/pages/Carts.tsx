@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { InputField } from '../components/InputField'
+import { Navbar } from '../components/Navbar'
 
 interface Products {
   product_image: string
@@ -39,9 +40,9 @@ export default function Carts() {
 
   return (
     <>
-      <section className="px-[16px]">
+      <section className="">
         {/* Header */}
-        <div className="pt-[30px] flex items-center justify-between">
+        <div className="pt-[30px] px-[16px] flex items-center justify-between">
           <Link
             to="/"
             className="p-2 bg-white flex justify-center items-center rounded-full hover:bg-red-500 transition-all duration-200 ease-in-out group"
@@ -57,7 +58,7 @@ export default function Carts() {
         </div>
 
         {/* Items / Products */}
-        <div className="mt-[30px]">
+        <div className="mt-[30px] px-[16px]">
           <div className="flex items-center justify-between">
             <h1 className="font-bold text-xl">Items</h1>
             <button
@@ -105,7 +106,7 @@ export default function Carts() {
         </div>
 
         {/* Details Payment */}
-        <div className="mt-[30px]">
+        <div className="mt-[30px] px-[16px]">
           <div className="flex items-center justify-between">
             <h1 className="font-bold text-xl">Detail Payment</h1>
             <button
@@ -157,7 +158,7 @@ export default function Carts() {
         </div>
 
         {/* Payment Method */}
-        <div className="mt-[30px]">
+        <div className="mt-[30px] px-[16px]">
           <div>
             <h1 className="font-bold">Payment Method</h1>
 
@@ -241,12 +242,12 @@ export default function Carts() {
         </div>
 
         {/* Delivery */}
-        <div className="mt-[30px] pb-[170px]">
+        <div className="mt-[30px] pb-[50px] px-[16px]">
           <div className="flex items-center justify-between">
             <h1 className="font-bold text-xl">Delivery to</h1>
           </div>
 
-          {/* Address */}
+          {/* Data User */}
           <div className="p-5 bg-white rounded-[24px] mt-[10px]">
             <div>
               <form
@@ -305,6 +306,7 @@ export default function Carts() {
                   />
                 </div>
 
+                {/* Proof Payment */}
                 <div>
                   <label
                     htmlFor="proof"
@@ -337,7 +339,7 @@ export default function Carts() {
         </div>
 
         {/* Price Total */}
-        <div className="fixed bottom-10 left-0 right-0 max-w-md mx-auto px-[16px]">
+        <div className="pb-[170px] px-[16px]">
           <div className="flex items-center justify-between p-5 bg-black rounded-[23px]">
             <div>
               <p className="text-gray-300 text-xs font-semibold">Grand Total</p>
@@ -352,6 +354,9 @@ export default function Carts() {
             </Link>
           </div>
         </div>
+
+        {/* Navbar */}
+        <Navbar />
       </section>
     </>
   )

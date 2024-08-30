@@ -2,7 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Login from './pages/Login'
 import Register from './pages/Register'
+import UserProfile from './pages/UserProfile'
+import UpdateProfile from './pages/UpdateProfile'
 import Homepage from './pages/Homepage'
+import StoreLocations from './pages/StoreLocations'
+import Doctors from './pages/Doctors'
 import DetailProduct from './pages/DetailProduct'
 import SearchProduct from './pages/SearchProduct'
 import Carts from './pages/Carts'
@@ -24,8 +28,28 @@ export default function App() {
           />
 
           <Route
+            path="/profile"
+            element={<UserProfile />}
+          />
+
+          <Route
+            path="/update-profile"
+            element={<UpdateProfile />}
+          />
+
+          <Route
             path="/"
             element={<Homepage />}
+          />
+
+          <Route
+            path="/store"
+            element={<StoreLocations />}
+          />
+
+          <Route
+            path="/doctors"
+            element={<Doctors />}
           />
 
           <Route

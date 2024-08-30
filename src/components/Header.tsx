@@ -6,24 +6,24 @@ export const Header = () => {
       <header className="w-full px-[16px]">
         <div className="pt-[30px] flex items-center justify-between">
           {/* Profile */}
-          <a
-            href=""
+          <Link
+            to="/profile"
             className="flex gap-x-2 items-center"
           >
             {/* Profile Image */}
             <div className="p-1 rounded-full bg-white">
               <img
                 src="assets/img/profile-default.png"
-                alt=""
+                alt="photo-profile"
               />
             </div>
 
             {/* Name & Role */}
             <div className="flex flex-col leading-tight">
-              <h1 className="font-semibold text-[#FD915A] text-[16px]">Jhon Doe</h1>
-              <h3 className="text-[14px]">Customer</h3>
+              <h1 className="font-semibold text-[#FD915A] text-[16px]">Setra Nugraha</h1>
+              <h3 className="text-[14px] font-semibold text-slate-500">Customer</h3>
             </div>
-          </a>
+          </Link>
 
           {/* Button */}
           <div className="flex items-center gap-x-2">

@@ -33,7 +33,17 @@ export const LatestProducts = () => {
   return (
     <>
       <div className="pt-[30px] px-[16px]">
-        <h1 className="text-[22px] font-bold">Latest Products</h1>
+        <div className="flex items-center justify-between">
+          <h1 className="text-[22px] font-bold">Latest Products</h1>
+          <div className="flex items-center gap-x-1 mr-3">
+            <p className="text-xs text-slate-400 font-semibold">swipe</p>
+            <img
+              src="assets/img/arrow-right.png"
+              alt="swipe"
+              className="w-[15px] h-[15px] mt-1"
+            />
+          </div>
+        </div>
 
         <div className="mt-[10px] flex items-center gap-x-5 overflow-x-auto whitespace-nowrap scrollbar-hide">
           {/* Card Categories */}
