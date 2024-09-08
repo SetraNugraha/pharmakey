@@ -11,68 +11,42 @@ import DetailProduct from './pages/DetailProduct'
 import SearchProduct from './pages/SearchProduct'
 import Carts from './pages/Carts'
 import FinishCheckout from './pages/FinishCheckout'
+import { UserLayout } from './layouts/UserLayout'
+import AdminLogin from './pages/Admin/AdminLogin'
+import AdminDashboard from './pages/Admin/AdminDashboard'
+import AdminCategory from './pages/Admin/AdminCategory'
+import AdminProducts from './pages/Admin/AdminProducts'
+import AdminTransactions from './pages/Admin/AdminTransactions'
+import { AdminLayout } from './layouts/AdminLayout'
 
 export default function App() {
   return (
     <Router>
-      <section className="bg-[#F7F1F0] ">
-        <Routes>
-          <Route
-            path="/login"
-            element={<Login />}
-          />
+      <Routes>
+        {/* User Layout */}
+        <Route element={<UserLayout />}>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/update-profile" element={<UpdateProfile />} />
+          <Route path="/store" element={<StoreLocations />} />
+          <Route path="/doctors" element={<Doctors />} />
+          <Route path="/detail-product" element={<DetailProduct />} />
+          <Route path="/search-product" element={<SearchProduct />} />
+          <Route path="/carts" element={<Carts />} />
+          <Route path="/finish-checkout" element={<FinishCheckout />} />
+        </Route>
 
-          <Route
-            path="/register"
-            element={<Register />}
-          />
-
-          <Route
-            path="/profile"
-            element={<UserProfile />}
-          />
-
-          <Route
-            path="/update-profile"
-            element={<UpdateProfile />}
-          />
-
-          <Route
-            path="/"
-            element={<Homepage />}
-          />
-
-          <Route
-            path="/store"
-            element={<StoreLocations />}
-          />
-
-          <Route
-            path="/doctors"
-            element={<Doctors />}
-          />
-
-          <Route
-            path="/detail-product"
-            element={<DetailProduct />}
-          />
-
-          <Route
-            path="/search-product"
-            element={<SearchProduct />}
-          />
-
-          <Route
-            path="/carts"
-            element={<Carts />}
-          />
-
-          <Route
-            path="/finish-checkout"
-            element={<FinishCheckout />}
-          />
-        </Routes>
-      </section>
+        {/* Admin layout */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route element={<AdminLayout />}>
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/category" element={<AdminCategory />} />
+          <Route path="/admin/products" element={<AdminProducts />} />
+          <Route path="/admin/transactions" element={<AdminTransactions />} />
+        </Route>
+      </Routes>
     </Router>
   )
 }
