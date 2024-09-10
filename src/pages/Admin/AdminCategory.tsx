@@ -1,19 +1,7 @@
 import { useState } from 'react'
 import Modal from '../../components/Admin/Modal'
 import { MdEditSquare, MdDelete, MdLibraryAdd } from 'react-icons/md'
-
-interface Categories {
-  id: number
-  icon: string
-  name: string
-}
-
-const categories: Categories[] = [
-  { id: 1, icon: 'fitness', name: 'Fitness' },
-  { id: 2, icon: 'surgicals', name: 'Surgicals' },
-  { id: 3, icon: 'diabetes', name: 'Diabetes' },
-  { id: 4, icon: 'vitamins', name: 'Vitamins' },
-]
+import { categories } from './dummyData'
 
 export default function AdminCategory() {
   const [modalCreate, setModalCreate] = useState<boolean>(false)

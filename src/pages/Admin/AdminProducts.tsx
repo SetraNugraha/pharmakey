@@ -2,62 +2,7 @@ import { MdEditSquare, MdDelete, MdLibraryAdd } from 'react-icons/md'
 import { IoListCircleSharp } from 'react-icons/io5'
 import { useState } from 'react'
 import Modal from '../../components/Admin/Modal'
-
-interface Products {
-  id: number
-  category_id: number
-  image: string
-  name: string
-  slug: string
-  price: number
-  about: string
-}
-
-const products: Products[] = [
-  {
-    id: 1,
-    category_id: 1,
-    image: 'med1',
-    name: 'Softovac Rami',
-    slug: 'softovac-rami',
-    price: 34000,
-    about:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  },
-
-  {
-    id: 2,
-    category_id: 2,
-    image: 'med2',
-    name: 'Enoki Softovac',
-    slug: 'enoki-softovac',
-    price: 87000,
-    about:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  },
-
-  {
-    id: 3,
-    category_id: 3,
-    image: 'med3',
-    name: 'Panadomal',
-    slug: 'panadomal',
-    price: 56000,
-    about:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  },
-
-  {
-    id: 4,
-    category_id: 4,
-    image: 'med4',
-    name: 'Enoki Softovac Pro',
-    slug: 'enoki-softovac-pro',
-    price: 112000,
-    about:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  },
-]
+import { products } from './dummyData'
 
 export default function AdminProducts() {
   const [modalCreate, setModalCreate] = useState<boolean>(false)
@@ -306,7 +251,7 @@ export default function AdminProducts() {
                 <div className="flex flex-col gap-y-3">
                   <div className="flex">
                     {/* Product Name */}
-                    <div className="flex flex-col gap-y-2 w-1/2 ">
+                    <div className="flex flex-col w-1/2 ">
                       <label htmlFor="name" className="font-bold text-slate-600 text-lg">
                         Product Name
                       </label>
@@ -314,7 +259,7 @@ export default function AdminProducts() {
                     </div>
 
                     {/* Product Category */}
-                    <div className="flex flex-col gap-y-2 w-1/2 pl-5">
+                    <div className="flex flex-col w-1/2 pl-5">
                       <label htmlFor="name" className="font-bold text-slate-600 text-lg">
                         Category
                       </label>
@@ -322,7 +267,7 @@ export default function AdminProducts() {
                     </div>
 
                     {/* Product Price */}
-                    <div className="flex flex-col gap-y-2 w-1/3">
+                    <div className="flex flex-col w-1/3">
                       <label htmlFor="name" className="font-bold text-slate-600 text-lg">
                         Price
                       </label>
@@ -331,7 +276,7 @@ export default function AdminProducts() {
                   </div>
 
                   {/* Product About */}
-                  <div className="flex flex-col gap-y-2">
+                  <div className="flex flex-col">
                     <label htmlFor="name" className="font-bold text-slate-600 text-lg">
                       Description
                     </label>

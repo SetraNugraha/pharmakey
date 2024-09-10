@@ -46,7 +46,7 @@ const Modal: ModalComponent = ({ children }) => {
   return (
     <>
       <div className="fixed flex justify-center items-center z-50 inset-0 bg-black/60">
-        <div className="bg-white max-w-[1000px] rounded-lg p-5">{children}</div>
+        <div className="bg-white max-w-[1000px] rounded-lg p-5 max-h-[90vh] overflow-y-auto">{children}</div>
       </div>
     </>
   )
