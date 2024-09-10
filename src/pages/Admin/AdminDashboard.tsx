@@ -1,9 +1,9 @@
 export default function AdminDashboard() {
   return (
     <>
-      <section className="px-10 py-2 bg-red-200">
+      <section className="px-10 py-5">
         <div>
-          <h1>Dashboard</h1>
+          <h1 className="font-bold text-xl">Dashboard</h1>
         </div>
       </section>
     </>

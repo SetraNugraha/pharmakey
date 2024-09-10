@@ -1,71 +1,78 @@
+type TransactionStatus = 'pending' | 'success' | 'canceled'
+
+interface Transactions {
+  total_price: number
+  date: string
+  status: TransactionStatus
+}
+
+const transactions: Transactions[] = [
+  {
+    total_price: 1230000,
+    date: '25 September 2024',
+    status: 'pending',
+  },
+
+  {
+    total_price: 876000,
+    date: '22 September 2024',
+    status: 'success',
+  },
+
+  {
+    total_price: 123000,
+    date: '2 September 2024',
+    status: 'canceled',
+  },
+]
+
 export default function AdminTransactions() {
   return (
     <>
-      <section className="px-10 py-2">
+      <section className="px-10 py-5">
         <div>
           <h1 className="font-bold text-2xl mb-5">Transactions</h1>
 
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
-                  <th scope="col" className="px-6 py-3">
-                    Name
+            <table className="w-full text-gray-500 dark:text-gray-400">
+              <thead className="text-gray-800 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr className="text-center text-[14px]">
+                  <th scope="col" className="py-3">
+                    Total Transaction
                   </th>
-                  <th scope="col" className="px-6 py-3">
-                    Color
+                  <th scope="col" className="py-3">
+                    Date
                   </th>
-                  <th scope="col" className="px-6 py-3">
-                    Category
+                  <th scope="col" className="py-3">
+                    Status
                   </th>
-                  <th scope="col" className="px-6 py-3">
-                    Price
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    <span className="sr-only">Edit</span>
+                  <th scope="col" className="py-3">
+                    <span className="sr-only">See Detail</span>
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple MacBook Pro 17"
-                  </th>
-                  <td className="px-6 py-4">Silver</td>
-                  <td className="px-6 py-4">Laptop</td>
-                  <td className="px-6 py-4">$2999</td>
-                  <td className="px-6 py-4 text-right">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                      Edit
-                    </a>
-                  </td>
-                </tr>
-                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                  </th>
-                  <td className="px-6 py-4">White</td>
-                  <td className="px-6 py-4">Laptop PC</td>
-                  <td className="px-6 py-4">$1999</td>
-                  <td className="px-6 py-4 text-right">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                      Edit
-                    </a>
-                  </td>
-                </tr>
-                <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Magic Mouse 2
-                  </th>
-                  <td className="px-6 py-4">Black</td>
-                  <td className="px-6 py-4">Accessories</td>
-                  <td className="px-6 py-4">$99</td>
-                  <td className="px-6 py-4 text-right">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                      Edit
-                    </a>
-                  </td>
-                </tr>
+                {transactions.map((transaction, index) => {
+                  return (
+                    <tr key={index} className="bg-white text-center border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                      <td scope="row" className="text-lg tracking-widest py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {transaction.total_price.toLocaleString('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 })}
+                      </td>
+                      <td className="text-lg  py-4">{transaction.date}</td>
+                      <td
+                        className={`my-3 p-2 tracking-wider text-white font-semibold inline-block rounded-lg uppercase ${
+                          transaction.status === 'pending' ? 'bg-yellow-600' : transaction.status === 'success' ? 'bg-green-600' : 'bg-red-500'
+                        }`}>
+                        {transaction.status}
+                      </td>
+                      <td className="text-lg  py-4">
+                        <a href="#" className="font-medium tracking-wider text-blue-500 hover:underline hover:text-white">
+                          Detail
+                        </a>
+                      </td>
+                    </tr>
+                  )
+                })}
               </tbody>
             </table>
           </div>
