@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Navbar } from '../components/Navbar'
 
 interface Doctor {
@@ -26,22 +26,24 @@ const doctors: Doctor[] = [
 ]
 
 export default function Doctors() {
+  const navigate = useNavigate()
   return (
     <>
       <section className="h-dvh">
         {/* Header */}
         <div className="pt-[30px] px-[16px] flex items-center justify-between">
-          <Link
-            to="/"
-            className="p-2 bg-white flex justify-center items-center rounded-full hover:bg-red-500 transition-all duration-200 ease-in-out group"
-          >
+          <button
+            onClick={() => navigate(-1)}
+            className="p-2 bg-white flex justify-center items-center rounded-full hover:bg-red-500 transition-all duration-200 ease-in-out group">
             <img
               src="assets/img/arrow-left.png"
               alt="back-button"
               className="group-hover:filter group-hover:invert group-hover:brightness-0"
             />
-          </Link>
-          <h1 className="font-semibold text-xl absolute left-1/2 -translate-x-[50%]">Pharmakey Doctors</h1>
+          </button>
+          <h1 className="font-semibold text-xl absolute left-1/2 -translate-x-[50%]">
+            Pharmakey Doctors
+          </h1>
         </div>
 
         {/* Result Store */}
@@ -53,8 +55,7 @@ export default function Doctors() {
             {doctors.map((dcotor, index) => (
               <button
                 key={index}
-                className="flex items-center justify-between gap-x-2 px-5 py-3 bg-white rounded-[16px] shrink-0 hover:bg-[#FD915A] transition-all duration-300 ease-in-out group"
-              >
+                className="flex items-center justify-between gap-x-2 px-5 py-3 bg-white rounded-[16px] shrink-0 hover:bg-[#FD915A] transition-all duration-300 ease-in-out group">
                 <div className="flex items-center  gap-x-3">
                   <img
                     src={`assets/img/${dcotor.doctor_image}`}
@@ -62,8 +63,12 @@ export default function Doctors() {
                     className="w-[70px] h-[70px] object-contain rounded-full shadow-lg group-hover:p-1 group-hover:rounded-full group-hover:bg-white transition-all duration-300 ease-in-out"
                   />
                   <div className="flex flex-col gap-y-1 items-start">
-                    <h1 className="font-bold group-hover:text-white text-start">{dcotor.name}</h1>
-                    <p className="font-semibold text-slate-400 group-hover:text-white text-xs">{dcotor.specialize}</p>
+                    <h1 className="font-bold group-hover:text-white text-start">
+                      {dcotor.name}
+                    </h1>
+                    <p className="font-semibold text-slate-400 group-hover:text-white text-xs">
+                      {dcotor.specialize}
+                    </p>
                   </div>
                 </div>
 

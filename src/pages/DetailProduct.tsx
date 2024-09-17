@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 interface Grading {
   icon: string
@@ -33,19 +33,23 @@ export default function DetailProduct() {
   return (
     <>
       <section className="h-dvh">
+        {/* Header */}
         <div className="pt-[30px] px-[16px] flex items-center justify-between">
-          {/* Header */}
-          <Link
-            to="/"
-            className="p-2 bg-white flex justify-center items-center rounded-full hover:bg-red-500 transition-all duration-200 ease-in-out group"
-          >
+          {/* Button Back */}
+          <button
+            onClick={() => navigate(-1)}
+            className="p-2 bg-white flex justify-center items-center rounded-full hover:bg-red-500 transition-all duration-200 ease-in-out group">
             <img
               src="assets/img/arrow-left.png"
               alt="back-button"
               className="group-hover:filter group-hover:invert group-hover:brightness-0"
             />
-          </Link>
-          <h1 className="font-semibold text-xl  absolute left-1/2 -translate-x-[50%]">Details</h1>
+          </button>
+
+          {/* Title */}
+          <h1 className="font-semibold text-xl  absolute left-1/2 -translate-x-[50%]">
+            Details
+          </h1>
         </div>
 
         {/* Product Img */}
@@ -73,17 +77,17 @@ export default function DetailProduct() {
 
               {/* Rating */}
               <div className="flex items-center gap-x-2">
-                <img
-                  src="assets/img/1-star.png"
-                  alt="star"
-                />
+                <img src="assets/img/1-star.png" alt="star" />
                 <h1 className="font-semibold">4.5/5</h1>
               </div>
             </div>
 
             {/* Description */}
             <div className="mt-[15px]">
-              <p className=" text-slate-600 leading-loose">Medicine good for your body even when don’t really need them so keep all without worrying about the life would be later.</p>
+              <p className=" text-slate-600 leading-loose">
+                Medicine good for your body even when don’t really need them so
+                keep all without worrying about the life would be later.
+              </p>
             </div>
 
             {/* Grading */}
@@ -91,12 +95,8 @@ export default function DetailProduct() {
               {gradingList.map((item, index) => (
                 <div
                   key={index}
-                  className="w-[100px] h-[100px] flex flex-col items-center justify-center gap-y-2 border border-slate-300 rounded-[16px] shrink-0"
-                >
-                  <img
-                    src={`assets/img/${item.icon}.png`}
-                    alt="grade"
-                  />
+                  className="w-[100px] h-[100px] flex flex-col items-center justify-center gap-y-2 border border-slate-300 rounded-[16px] shrink-0">
+                  <img src={`assets/img/${item.icon}.png`} alt="grade" />
                   <h1 className="font-semibold">{item.name}</h1>
                 </div>
               ))}
@@ -105,7 +105,10 @@ export default function DetailProduct() {
             {/* Testimonials */}
             <div className="mt-[20px]">
               {/* text testimonial */}
-              <p className="tracking-wider">My kid was happier whenever he is playing without artificial toys, full energy yeah!</p>
+              <p className="tracking-wider">
+                My kid was happier whenever he is playing without artificial
+                toys, full energy yeah!
+              </p>
               <div className="mt-[10px] flex items-center justify-between">
                 {/* user profile */}
                 <div className="flex items-center gap-x-2">
@@ -117,10 +120,7 @@ export default function DetailProduct() {
                   <p className="font-semibold">Jhon Doe</p>
                 </div>
                 {/* Rating */}
-                <img
-                  src="assets/img/star.png"
-                  alt="rating"
-                />
+                <img src="assets/img/star.png" alt="rating" />
               </div>
             </div>
 
@@ -134,8 +134,7 @@ export default function DetailProduct() {
               <div>
                 <button
                   onClick={() => navigate('/carts')}
-                  className="px-6 py-3 bg-[#FD915A] text-white font-bold rounded-[50px] hover:bg-white hover:text-[#FD915A] transition-all duration-200 ease-in-out hover:border-[2px] hover:border-[#FD915A] shadow-xl"
-                >
+                  className="px-6 py-3 bg-[#FD915A] text-white font-bold rounded-[50px] hover:bg-white hover:text-[#FD915A] transition-all duration-200 ease-in-out hover:border-[2px] hover:border-[#FD915A] shadow-xl">
                   Add to Cart
                 </button>
               </div>

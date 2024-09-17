@@ -51,8 +51,7 @@ export const LatestProducts = () => {
             <Link
               key={index}
               to="/detail-product"
-              className="flex flex-col items-center gap-y-3 px-7 py-5 bg-white rounded-[16px] shrink-0 hover:bg-[#ef966a]  transition-all duration-300 ease-in-out group group"
-            >
+              className="flex flex-col items-center gap-y-3 px-7 py-5 bg-white rounded-[16px] shrink-0 hover:bg-[#ef966a]  transition-all duration-300 ease-in-out group group">
               <div className="">
                 <img
                   src={`assets/img/${product.product_image}.png`}
@@ -61,8 +60,12 @@ export const LatestProducts = () => {
                 />
               </div>
               <div className="flex flex-col items-start">
-                <h1 className="font-bold group-hover:text-white  transition-all duration-300 ease-in-out group">{product.name}</h1>
-                <p className="text-slate-400 font-semibold group-hover:text-white  transition-all duration-300 ease-in-out group">Rp. {product.price}</p>
+                <h1 className="font-bold group-hover:text-white  transition-all duration-300 ease-in-out group">
+                  {product.name}
+                </h1>
+                <p className="text-slate-400 font-semibold group-hover:text-white  transition-all duration-300 ease-in-out group">
+                  Rp. {product.price}
+                </p>
               </div>
             </Link>
           ))}

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Navbar } from '../components/Navbar'
 
 interface Store {
@@ -21,22 +21,26 @@ const storeLocations: Store[] = [
 ]
 
 export default function StoreLocations() {
+  const navigate = useNavigate()
   return (
     <>
       <section className="h-dvh">
         {/* Header */}
         <div className="pt-[30px] px-[16px] flex items-center justify-between">
-          <Link
-            to="/"
-            className="p-2 bg-white flex justify-center items-center rounded-full hover:bg-red-500 transition-all duration-200 ease-in-out group"
-          >
+          {/* Button Back */}
+          <button
+            onClick={() => navigate(-1)}
+            className="p-2 bg-white flex justify-center items-center rounded-full hover:bg-red-500 transition-all duration-200 ease-in-out group">
             <img
               src="assets/img/arrow-left.png"
               alt="back-button"
               className="group-hover:filter group-hover:invert group-hover:brightness-0"
             />
-          </Link>
-          <h1 className="font-semibold text-xl absolute left-1/2 -translate-x-[50%]">Pharmakey Store</h1>
+          </button>
+          {/* Tiitle */}
+          <h1 className="font-semibold text-xl absolute left-1/2 -translate-x-[50%]">
+            Pharmakey Store
+          </h1>
         </div>
 
         {/* Result Store */}
@@ -48,8 +52,7 @@ export default function StoreLocations() {
             {storeLocations.map((store, index) => (
               <button
                 key={index}
-                className="flex items-center justify-between gap-x-2 px-5 py-3 bg-white rounded-[16px] shrink-0 hover:bg-[#FD915A] transition-all duration-300 ease-in-out group"
-              >
+                className="flex items-center justify-between gap-x-2 px-5 py-3 bg-white rounded-[16px] shrink-0 hover:bg-[#FD915A] transition-all duration-300 ease-in-out group">
                 <div className="flex items-center  gap-x-3">
                   <img
                     src={`assets/img/${store.store_image}`}
@@ -57,8 +60,12 @@ export default function StoreLocations() {
                     className="w-[70px] h-[70px] object-contain rounded-xl shadow-lg"
                   />
                   <div className="flex flex-col gap-y-1 items-start">
-                    <h1 className="font-bold group-hover:text-white text-start">{store.city}</h1>
-                    <p className="font-semibold text-slate-400 group-hover:text-white text-xs">{store.location}</p>
+                    <h1 className="font-bold group-hover:text-white text-start">
+                      {store.city}
+                    </h1>
+                    <p className="font-semibold text-slate-400 group-hover:text-white text-xs">
+                      {store.location}
+                    </p>
                   </div>
                 </div>
 
@@ -69,7 +76,9 @@ export default function StoreLocations() {
                     alt="star"
                     className="group-hover:filter group-hover:brightness-0 group-hover:invert"
                   />
-                  <p className="font-semibold text-slate-400 group-hover:text-white">Go to maps</p>
+                  <p className="font-semibold text-slate-400 group-hover:text-white">
+                    Go to maps
+                  </p>
                 </div>
               </button>
             ))}
