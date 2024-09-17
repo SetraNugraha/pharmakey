@@ -17,9 +17,14 @@ interface Products {
 type TransactionStatus = 'pending' | 'success' | 'canceled'
 
 interface Transactions {
+  email: string
   total_price: number
   date: string
   status: TransactionStatus
+}
+
+interface Carts extends Products {
+  quantity: number
 }
 
 export const categories: Categories[] = [
@@ -77,27 +82,27 @@ export const products: Products[] = [
 
 export const transactions: Transactions[] = [
   {
+    email: 'budirusmanto@gmail.com',
     total_price: 1230000,
     date: '25 September 2024',
     status: 'pending',
   },
 
   {
+    email: 'sitinurmala@gmail.com',
     total_price: 876000,
     date: '22 September 2024',
     status: 'success',
   },
 
   {
+    email: 'setranugraha99876@gmail.com',
     total_price: 123000,
     date: '2 September 2024',
     status: 'canceled',
   },
 ]
 
-interface Carts extends Products {
-  quantity: number
-}
 export const carts: Carts[] = [
   {
     id: 1,

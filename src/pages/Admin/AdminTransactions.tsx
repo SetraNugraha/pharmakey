@@ -15,6 +15,9 @@ export default function AdminTransactions() {
               <thead className="text-gray-800 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr className="text-center text-[14px]">
                   <th scope="col" className="py-3">
+                    Email
+                  </th>
+                  <th scope="col" className="py-3">
                     Total Transaction
                   </th>
                   <th scope="col" className="py-3">
@@ -31,19 +34,44 @@ export default function AdminTransactions() {
               <tbody>
                 {transactions.map((transaction, index) => {
                   return (
-                    <tr key={index} className="bg-white text-center border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                      <td scope="row" className="text-lg tracking-widest py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {transaction.total_price.toLocaleString('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 })}
+                    <tr
+                      key={index}
+                      className="bg-white text-center border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                      {/* Email */}
+                      <td className="text-lg  py-4">{transaction.email}</td>
+
+                      {/* Total Price */}
+                      <td
+                        scope="row"
+                        className="text-lg tracking-widest py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {transaction.total_price.toLocaleString('id-ID', {
+                          style: 'currency',
+                          currency: 'IDR',
+                          minimumFractionDigits: 0,
+                        })}
                       </td>
+
+                      {/* Date */}
                       <td className="text-lg  py-4">{transaction.date}</td>
+
+                      {/* Status */}
                       <td
                         className={`my-3 p-2 tracking-wider text-white font-semibold inline-block rounded-lg uppercase ${
-                          transaction.status === 'pending' ? 'bg-yellow-600' : transaction.status === 'success' ? 'bg-green-600' : 'bg-red-500'
+                          transaction.status === 'pending'
+                            ? 'bg-yellow-600'
+                            : transaction.status === 'success'
+                            ? 'bg-green-600'
+                            : 'bg-red-500'
                         }`}>
                         {transaction.status}
                       </td>
+
+                      {/* Button Detail */}
                       <td className="text-lg  py-4">
-                        <a onClick={() => setModalTransactionDetail(true)} href="#" className="font-medium tracking-wider text-blue-500 hover:underline hover:text-white">
+                        <a
+                          onClick={() => setModalTransactionDetail(true)}
+                          href="#"
+                          className="font-medium tracking-wider text-blue-500 hover:underline hover:text-white">
                           Detail
                         </a>
                       </td>
@@ -57,15 +85,30 @@ export default function AdminTransactions() {
 
         {modalTransactionDetail && (
           <Modal>
-            <Modal.Header title="Detail Transaction" onClose={() => setModalTransactionDetail(false)} />
+            <Modal.Header
+              title="Detail Transaction"
+              onClose={() => setModalTransactionDetail(false)}
+            />
             <Modal.Body>
-              <div className="w-[800px]">
+              <div className="w-[900px]">
                 {/* Header */}
                 <div className="relative flex items-center justify-between pb-5">
+                  {/* Email */}
+                  <div>
+                    <h1 className="text-slate-400 font-semibold">Email</h1>
+                    <p className="font-bold text-lg">
+                      setranugraha99876@gmail.com
+                    </p>
+                  </div>
+
                   {/* Total Transaction */}
                   <div>
-                    <h1 className="text-slate-400 font-semibold">Total Transaction</h1>
-                    <p className="font-bold text-xl tracking-wider">Rp. 1.257.000</p>
+                    <h1 className="text-slate-400 font-semibold">
+                      Total Transaction
+                    </h1>
+                    <p className="font-bold text-xl tracking-wider">
+                      Rp. 1.257.000
+                    </p>
                   </div>
 
                   {/* Date */}
@@ -76,7 +119,9 @@ export default function AdminTransactions() {
 
                   {/* Status */}
                   <div>
-                    <p className="py-2 px-3 bg-yellow-600 text-white font-semibold uppercase rounded-lg">pending</p>
+                    <p className="py-2 px-3 bg-yellow-600 text-white font-semibold uppercase rounded-lg">
+                      pending
+                    </p>
                   </div>
 
                   {/* Horizontal line */}
@@ -87,21 +132,35 @@ export default function AdminTransactions() {
                   {/* Container Left Content */}
                   <div className="w-1/2">
                     {/* List Product */}
-                    <h1 className="font-bold text-xl my-5 tracking-wide">List of Items</h1>
+                    <h1 className="font-bold text-xl my-5 tracking-wide">
+                      List of Items
+                    </h1>
                     <div className="flex flex-col gap-y-3">
                       {carts.map((cart, index) => {
                         return (
-                          <div key={index} className="flex items-center justify-between">
+                          <div
+                            key={index}
+                            className="flex items-center justify-between">
                             <div className="flex items-center gap-x-5">
-                              <img src={`/assets/img/${cart.image}.png`} alt="product-image" className="w-[35px]" />
+                              <img
+                                src={`/assets/img/${cart.image}.png`}
+                                alt="product-image"
+                                className="w-[35px]"
+                              />
                               <div>
                                 <h1 className="font-bold">{cart.name}</h1>
                                 <p className="font-semibold text-slate-400">
-                                  {cart.price.toLocaleString('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 })}
+                                  {cart.price.toLocaleString('id-ID', {
+                                    style: 'currency',
+                                    currency: 'IDR',
+                                    minimumFractionDigits: 0,
+                                  })}
                                 </p>
                               </div>
                             </div>
-                            <p className="font-semibold text-slate-500">quantity : {cart.quantity}</p>
+                            <p className="font-semibold text-slate-500">
+                              quantity : {cart.quantity}
+                            </p>
                           </div>
                         )
                       })}
@@ -109,12 +168,16 @@ export default function AdminTransactions() {
 
                     {/* Details of Delivery */}
                     <div>
-                      <h1 className="font-bold text-xl my-5 tracking-wide">Details of Delivery</h1>
+                      <h1 className="font-bold text-xl my-5 tracking-wide">
+                        Details of Delivery
+                      </h1>
 
                       {/* Address */}
                       <div className="flex flex-col gap-y-5">
                         <div className="flex items-center justify-between">
-                          <h1 className="font-semibold text-slate-400">Address</h1>
+                          <h1 className="font-semibold text-slate-400">
+                            Address
+                          </h1>
                           <p className="font-bold">Jl. Cikaret, Cibinong</p>
                         </div>
 
@@ -124,19 +187,27 @@ export default function AdminTransactions() {
                         </div>
 
                         <div className="flex items-center justify-between">
-                          <h1 className="font-semibold text-slate-400">Post Code</h1>
+                          <h1 className="font-semibold text-slate-400">
+                            Post Code
+                          </h1>
                           <p className="font-bold">18977</p>
                         </div>
 
                         <div className="flex items-center justify-between">
-                          <h1 className="font-semibold text-slate-400">Phone Number</h1>
+                          <h1 className="font-semibold text-slate-400">
+                            Phone Number
+                          </h1>
                           <p className="font-bold">0812447621</p>
                         </div>
                       </div>
                       {/* Notes */}
                       <div className="flex flex-col mt-5">
-                        <h1 className="font-semibold text-slate-400">Note : </h1>
-                        <p className="font-bold">Rumah berada di ujung gang. </p>
+                        <h1 className="font-semibold text-slate-400">
+                          Note :{' '}
+                        </h1>
+                        <p className="font-bold">
+                          Rumah berada di ujung gang.{' '}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -144,8 +215,14 @@ export default function AdminTransactions() {
                   {/* Container Right Content */}
                   <div className="w-1/2 pl-5">
                     {/* Proof of Payment */}
-                    <h1 className="font-bold text-xl my-5 tracking-wide">Proof of Payment</h1>
-                    <img src="/assets/img/proof-payment.jpeg" alt="proof-payment" className="border border-black max-h-[500px]" />
+                    <h1 className="font-bold text-xl my-5 tracking-wide">
+                      Proof of Payment
+                    </h1>
+                    <img
+                      src="/assets/img/proof-payment.jpeg"
+                      alt="proof-payment"
+                      className="border border-black max-h-[500px]"
+                    />
                   </div>
                 </div>
 
@@ -155,7 +232,9 @@ export default function AdminTransactions() {
                   <button className="px-3 py-2 mt-5 bg-blue-500 text-white font-semibold rounded-lg tracking-wide shadow-xl hover:bg-green-600 duration-300">
                     Approve
                   </button>
-                  <button className="px-3 py-2 mt-5 bg-red-500 text-white font-semibold rounded-lg tracking-wide shadow-xl hover:bg-gray-600 duration-300">Cancel</button>
+                  <button className="px-3 py-2 mt-5 bg-red-500 text-white font-semibold rounded-lg tracking-wide shadow-xl hover:bg-gray-600 duration-300">
+                    Cancel
+                  </button>
                 </div>
               </div>
             </Modal.Body>
