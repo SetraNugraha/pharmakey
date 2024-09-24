@@ -9,7 +9,7 @@ export default function UpdateProfile() {
           {/* Header */}
           <Link
             to="/profile"
-            className="p-2 bg-white flex justify-center items-center rounded-full hover:bg-red-500 transition-all duration-200 ease-in-out group"
+            className="p-2 bg-white flex justify-center items-center rounded-full ring-1 ring-black hover:ring-0 hover:bg-red-500 transition-all duration-200 ease-in-out group"
           >
             <img
               src="assets/img/arrow-left.png"
@@ -121,7 +121,7 @@ export default function UpdateProfile() {
                     </div>
                   </div>
 
-                  <button className="text-center mt-[10px] tracking-wider px-6 py-3 bg-[#FD915A] text-white font-bold rounded-[50px] hover:bg-white hover:text-[#FD915A] hover:ring-2 hover:ring-[#FD915A]">Submit</button>
+                  <button className="text-center mt-[10px] tracking-wider px-6 py-3 bg-[#FD915A] text-white font-bold rounded-[50px] hover:bg-white hover:text-[#FD915A] hover:ring-2 hover:ring-[#FD915A] duration-300">Submit</button>
                 </form>
               </div>
             </div>

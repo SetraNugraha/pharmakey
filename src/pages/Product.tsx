@@ -40,7 +40,7 @@ export default function Product() {
           {/* Back Button */}
           <Link
             to="/"
-            className="p-2 bg-white flex justify-center items-center rounded-full hover:bg-red-500 transition-all duration-200 ease-in-out group">
+            className="p-2 bg-white flex justify-center items-center rounded-full ring-1 ring-black hover:ring-0 hover:bg-red-500 transition-all duration-200 ease-in-out group">
             <img
               src="assets/img/arrow-left.png"
               alt="back-button"

@@ -34,7 +34,7 @@ export default function Doctors() {
         <div className="pt-[30px] px-[16px] flex items-center justify-between">
           <button
             onClick={() => navigate(-1)}
-            className="p-2 bg-white flex justify-center items-center rounded-full hover:bg-red-500 transition-all duration-200 ease-in-out group">
+            className="p-2 bg-white flex justify-center items-center rounded-full ring-1 ring-black hover:ring-0 hover:bg-red-500 transition-all duration-200 ease-in-out group">
             <img
               src="assets/img/arrow-left.png"
               alt="back-button"
@@ -46,11 +46,11 @@ export default function Doctors() {
           </h1>
         </div>
 
-        {/* Result Store */}
+        {/* Result Doctor */}
         <div className="mt-[30px] px-[16px]">
           <h1 className="font-bold">Results</h1>
 
-          {/* Store */}
+          {/* Doctor */}
           <div className="mt-[10px] flex flex-col gap-y-5">
             {doctors.map((dcotor, index) => (
               <button

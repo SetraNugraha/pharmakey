@@ -22,7 +22,7 @@ const navbarLink: Link[] = [
   {
     icon: 'orders',
     title: 'Orders',
-    url: '/carts',
+    url: '/transactions',
   },
 
   {

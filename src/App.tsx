@@ -11,6 +11,7 @@ import StoreLocations from './pages/StoreLocations'
 import Doctors from './pages/Doctors'
 import DetailProduct from './pages/DetailProduct'
 import SearchProduct from './pages/SearchProduct'
+import Transactions from './pages/Transactions'
 import Carts from './pages/Carts'
 import FinishCheckout from './pages/FinishCheckout'
 import { UserLayout } from './layouts/UserLayout'
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/update-profile" element={<UpdateProfile />} />
           <Route path="/store" element={<StoreLocations />} />
+          <Route path="/transactions" element={<Transactions />} />
           <Route path="/doctors" element={<Doctors />} />
           <Route path="/detail-product" element={<DetailProduct />} />
           <Route path="/search-product" element={<SearchProduct />} />
