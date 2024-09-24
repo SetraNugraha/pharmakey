@@ -13,12 +13,7 @@ export default function AdminLogin() {
               <label htmlFor="username" className="font-semibold text-slate-400">
                 Username
               </label>
-              <input
-                type="text"
-                name="username"
-                id="username"
-                className="h-[35px] border border-slate-300 rounded-lg px-5 focus:outline-none focus:border-[2px] focus:border-blue-500"
-              />
+              <input type="text" name="username" id="username" className="h-[35px] border border-slate-300 rounded-lg px-5 focus:outline-none focus:border-[2px] focus:border-blue-500" />
             </div>
 
             {/* Password */}
@@ -26,18 +21,13 @@ export default function AdminLogin() {
               <label htmlFor="password" className="font-semibold text-slate-400">
                 Password
               </label>
-              <input
-                type="text"
-                name="password"
-                id="password"
-                className="h-[35px] border border-slate-300 rounded-lg px-5 focus:outline-none focus:border-[2px] focus:border-blue-500"
-              />
+              <input type="text" name="password" id="password" className="h-[35px] border border-slate-300 rounded-lg px-5 focus:outline-none focus:border-[2px] focus:border-blue-500" />
             </div>
 
             {/* Button Login */}
             <button
               onClick={() => navigate('/admin/dashboard')}
-              className="py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-xl mt-5 text-lg hover:bg-slate-400 duration-200">
+              className="py-2 bg-blue-500 text-white tracking-wider font-semibold rounded-lg shadow-xl mt-5 text-lg hover:oulinte-none hover:ring-2 hover:ring-blue-500 hover:text-blue-500 hover:bg-white duration-200">
               Login
             </button>
           </form>

@@ -91,7 +91,7 @@ export default function AdminCategory() {
                 </div>
 
                 {/* Button Submit */}
-                <button className="py-2 rounded-lg bg-blue-500 text-white font-semibold text-lg tracking-wider mt-5 shadow-xl hover:bg-blue-700 duration-300 active:bg-gray-500">
+                <button className="py-2 rounded-lg bg-blue-500 text-white font-semibold text-lg tracking-wider mt-5 shadow-xl hover:oulinte-none hover:ring-2 hover:ring-blue-500 hover:text-blue-500 hover:bg-white duration-300">
                   Submit
                 </button>
               </form>
@@ -128,7 +128,7 @@ export default function AdminCategory() {
                 </div>
 
                 {/* Button Submit */}
-                <button className="py-2 rounded-lg bg-green-500 text-white font-semibold text-lg tracking-wider mt-5 shadow-xl hover:bg-green-700 duration-300 active:bg-gray-500">
+                <button className="py-2 rounded-lg bg-green-500 text-white font-semibold text-lg tracking-wider mt-5 shadow-xl duration-300 hover:oulinte-none hover:ring-2 hover:ring-green-500 hover:text-green-500 hover:bg-white">
                   Edit Category
                 </button>
               </form>

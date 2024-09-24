@@ -99,10 +99,7 @@ export default function AdminProducts() {
                   <label htmlFor="category" className="font-semibold text-slate-500 ml-1">
                     Product Name
                   </label>
-                  <select
-                    name="category_id"
-                    id="category"
-                    className="h-[40px] pl-3 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg">
+                  <select name="category_id" id="category" className="h-[40px] pl-3 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg">
                     <option value="">Select Category</option>
                     <option value="1">Surgicals</option>
                     <option value="2">Vitamins</option>
@@ -147,7 +144,7 @@ export default function AdminProducts() {
                 </div>
 
                 {/* Button Submit */}
-                <button className="py-2 rounded-lg bg-blue-500 text-white font-semibold text-lg tracking-wider mt-5 shadow-xl hover:bg-blue-700 duration-300 active:bg-gray-500">
+                <button className="py-2 rounded-lg bg-blue-500 text-white font-semibold text-lg tracking-wider mt-5 shadow-xl hover:oulinte-none hover:ring-2 hover:ring-blue-500 hover:text-blue-500 hover:bg-white duration-300">
                   Submit
                 </button>
               </form>
@@ -180,10 +177,7 @@ export default function AdminProducts() {
                   <label htmlFor="category" className="font-semibold text-slate-500 ml-1">
                     Product Name
                   </label>
-                  <select
-                    name="category_id"
-                    id="category"
-                    className="h-[40px] pl-3 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg">
+                  <select name="category_id" id="category" className="h-[40px] pl-3 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg">
                     <option value="">Select Category</option>
                     <option value="1">Surgicals</option>
                     <option value="2">Vitamins</option>
@@ -228,7 +222,7 @@ export default function AdminProducts() {
                 </div>
 
                 {/* Button Submit */}
-                <button className="py-2 rounded-lg bg-green-500 text-white font-semibold text-lg tracking-wider mt-5 shadow-xl hover:bg-green-700 duration-300 active:bg-gray-500">
+                <button className="py-2 rounded-lg bg-green-500 text-white font-semibold text-lg tracking-wider mt-5 shadow-xl duration-300 hover:oulinte-none hover:ring-2 hover:ring-green-500 hover:text-green-500 hover:bg-white">
                   Edit Product
                 </button>
               </form>
@@ -281,8 +275,8 @@ export default function AdminProducts() {
                       Description
                     </label>
                     <p className="font-semibold text-slate-500 text-justify">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
                   </div>
                 </div>
