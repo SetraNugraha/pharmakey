@@ -27,7 +27,7 @@ const carts: Products[] = [
   },
 ]
 
-type PaymentMethod = 'transfer' | 'manual'
+type PaymentMethod = 'transfer' | 'cod'
 
 export default function Carts() {
   const [showItems, setShowItems] = useState(false)
@@ -155,12 +155,12 @@ export default function Carts() {
               </button>
 
               <button
-                onClick={() => handleSelectedMethod('manual')}
+                onClick={() => handleSelectedMethod('cod')}
                 className={`w-1/2 flex items-center gap-x-3 py-3 px-7 bg-white rounded-[16px] hover:outline-none hover:ring-1 hover:ring-[#F39D84] ${
-                  paymentMethod === 'manual' ? 'border-[2px] border-[#F39D84]' : ''
+                  paymentMethod === 'cod' ? 'border-[2px] border-[#F39D84]' : ''
                 }`}>
-                <img src="assets/img/manual.png" alt="manual" className="p-2 bg-[#F39D84] rounded-full" />
-                <p className="font-semibold">Manual</p>
+                <img src="assets/img/cod.png" alt="cod" className="p-2 bg-[#F39D84] rounded-full" />
+                <p className="font-semibold">COD</p>
               </button>
             </div>
 
@@ -192,9 +192,9 @@ export default function Carts() {
               )}
 
               {/* Manual Method */}
-              {paymentMethod === 'manual' && (
+              {paymentMethod === 'cod' && (
                 <div>
-                  <h1 className="font-bold">Manual Payment</h1>
+                  <h1 className="font-bold">COD Method</h1>
                   <div className="flex flex-col gap-y-3 mt-5">
                     <div className="flex items-center gap-x-3">
                       <img src="assets/img/bank.png" alt="bank" />
